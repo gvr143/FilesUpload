@@ -1,0 +1,25 @@
+{%extends 'base.html'%}
+
+{%block title%}Profiles List{%endblock%}
+
+{%block l2%}active{%endblock%}
+
+{%block content%}
+<br>
+<table cellpadding="8" align="center" border="1">
+    <tr>
+        <th>Full Name</th>       
+        <th>Technowlogies Known</th>
+        <th>Email Id</th>
+        <th>Photo</th>
+    </tr>
+    {%for r in rows%}
+        <tr>
+            <td>{{r.fname}} {{r.lname}}</td>            
+            <td>{{r.tech}}</td>
+            <td>{{r.email}}</td>
+            <td><img src="{{r.photo.url}}" height='100' width='80'> </td>
+        </tr>          
+    {%endfor%}
+</table> 
+{%endblock%}
